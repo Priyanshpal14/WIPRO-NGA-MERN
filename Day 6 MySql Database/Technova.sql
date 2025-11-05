@@ -212,6 +212,32 @@ JOIN Project p ON pr.ProjectID = p.ProjectID;
 -- Re-run EXPLAIN to compare improvement
 
 -- ==========================================================
+-- BONUS CHALLENGE
+-- ==========================================================
+
+-- 1. Create View for Employee Performance
+CREATE OR REPLACE VIEW EmployeePerformanceView AS
+SELECT e.EmpName, d.DeptName, p.ProjectName, pr.Rating
+FROM Employee e
+JOIN Department d ON e.DeptID = d.DeptID
+JOIN Performance pr ON e.EmpID = pr.EmpID
+JOIN Project p ON pr.ProjectID = p.ProjectID;
+
+-- 2. Stored Procedure for Top Performers
+DELIMITER //
+CREATE PROCEDURE GetTopPerformers(IN deptName VARCHAR(50))
+BEGIN
+    SELECT e.EmpName, p.Rating
+    FROM Performance p
+    JOIN Employee e ON p.EmpID = e.EmpID
+    JOIN Department d ON e.DeptID = d.DeptID
+    WHERE d.DeptName = deptName
+    ORDER BY p.Rating DESC
+    LIMIT 3;
+END //
+DELIMITER ;
+
+-- ==========================================================
 -- END OF SCRIPT
 -- ==========================================================
 

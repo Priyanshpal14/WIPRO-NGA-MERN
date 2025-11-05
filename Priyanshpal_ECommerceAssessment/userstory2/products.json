@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop Pro",
+        "category": "Electronics",
+        "price": 1200.00,
+        "stock": 15,
+        "description": "Powerful laptop for professionals."
+    },
+    {
+        "id": 2,
+        "name": "Cotton T-Shirt",
+        "category": "Apparel",
+        "price": 25.50,
+        "stock": 50,
+        "description": "Comfortable and stylish cotton t-shirt."
+    },
+    {
+        "id": 3,
+        "name": "Coffee Maker",
+        "category": "Home Goods",
+        "price": 75.99,
+        "stock": 30,
+        "description": "Brew your perfect cup every morning."
+    },
+    {
+        "id": 4,
+        "name": "Running Shoes",
+        "category": "Apparel",
+        "price": 89.99,
+        "stock": 22,
+        "description": "Lightweight and durable running shoes."
+    },
+    {
+        "id": 5,
+        "name": "External SSD 1TB",
+        "category": "Electronics",
+        "price": 150.00,
+        "stock": 10,
+        "description": "Fast external storage solution."
+    },
+    {
+        "id": 6,
+        "name": "Bose Speaker",
+        "category": "Electronics",
+        "price": 250.00,
+        "stock": 20,
+        "description": "High quality Bose party speaker."
+    }
+]
