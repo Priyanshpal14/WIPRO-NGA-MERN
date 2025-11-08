@@ -1,0 +1,7 @@
+
+{
+    "courses": [
+        {"id": 1, "title": "React Basics", "level": "Beginner", "duration": 4 },
+        {"id": 2, "title": "React Advanced", "level": "Advanced", "duration": 6 }
+    ]
+}
