@@ -3,13 +3,11 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <p>Select a concept to view examples:</p>
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        <li>🚀 Lazy Loading</li>
-        <li>🧠 Pure Component</li>
-        <li>🛑 Error Boundary</li>
-        <li>🪟 Portal (Modal)</li>
-      </ul>
+      <h2>Welcome to React Advanced Concepts Demo</h2>
+      <p>
+        Select a section above to explore Lazy Loading, Pure Components, Error
+        Boundaries, and Portals.
+      </p>
     </div>
   );
 }

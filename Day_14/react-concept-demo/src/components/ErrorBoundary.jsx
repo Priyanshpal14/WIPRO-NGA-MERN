@@ -7,7 +7,6 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError() {
-    // Update state so next render shows fallback
     return { hasError: true };
   }
 
@@ -15,15 +14,19 @@ class ErrorBoundary extends React.Component {
     console.error("ErrorBoundary caught an error:", error, info);
   }
 
+  handleReset = () => {
+    this.setState({ hasError: false });
+  };
+
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ color: "red", marginTop: 20 }}>
-          <h3>⚠️ Something went wrong!</h3>
+        <div style={{ color: "red" }}>
+          <h3>Something went wrong.</h3>
+          <button onClick={this.handleReset}>Try Again</button>
         </div>
       );
     }
-
     return this.props.children;
   }
 }

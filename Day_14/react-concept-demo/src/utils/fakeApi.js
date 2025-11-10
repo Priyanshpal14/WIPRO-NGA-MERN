@@ -1,4 +1,4 @@
-export const fakeApi = () =>
-  new Promise((resolve) => {
-    setTimeout(() => resolve("Loaded data"), 1500);
-  });
+export const fakeApiCall = () =>
+  new Promise((resolve) =>
+    setTimeout(() => resolve("Loaded data from fake API!"), 1500)
+  );

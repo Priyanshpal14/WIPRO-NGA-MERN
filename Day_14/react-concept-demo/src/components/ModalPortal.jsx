@@ -1,35 +1,44 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-function ModalPortal({ children, onClose }) {
-  const el = document.createElement("div");
+const modalRoot = document.getElementById("modal-root");
 
+export default function ModalPortal({ show, onClose }) {
   useEffect(() => {
-    document.body.appendChild(el);
-    return () => {
-      document.body.removeChild(el);
-    };
-  }, [el]);
+    const handleEsc = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
 
-  const modalContent = (
+  if (!show) return null;
+
+  return ReactDOM.createPortal(
     <div
       style={{
         position: "fixed",
-        top: 0, left: 0, right: 0, bottom: 0,
-        background: "rgba(0,0,0,0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0,0,0,0.5)",
       }}
       onClick={onClose}
     >
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        {children}
+      <div
+        style={{
+          background: "#fff",
+          padding: 20,
+          margin: "15% auto",
+          width: "300px",
+          textAlign: "center",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3>Modal Content</h3>
+        <p>This modal is rendered via React Portal.</p>
+        <button onClick={onClose}>Close</button>
       </div>
-    </div>
+    </div>,
+    modalRoot
   );
-
-  return ReactDOM.createPortal(modalContent, el);
 }
-
-export default ModalPortal;
