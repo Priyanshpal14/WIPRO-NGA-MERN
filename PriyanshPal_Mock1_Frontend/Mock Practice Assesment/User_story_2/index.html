@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Dashboard - EventHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1>📊 Event Management Dashboard</h1>
+            <p class="subtitle">Real-time event tracking and management</p>
+        </header>
+
+        <!-- Filter Controls -->
+        <div class="filter-section">
+            <h2>Filter Events</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="categoryFilter">Category:</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="conference">Conference</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="networking">Networking</option>
+                        <option value="webinar">Webinar</option>
+                        <option value="seminar">Seminar</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="dateFilter">Date:</label>
+                    <select id="dateFilter">
+                        <option value="all">All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="upcoming">Upcoming</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="statusFilter">Status:</label>
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="open">Open for Registration</option>
+                        <option value="closing">Closing Soon</option>
+                        <option value="full">Fully Booked</option>
+                    </select>
+                </div>
+
+                <button id="resetFilters" class="btn-reset">Reset Filters</button>
+            </div>
+        </div>
+
+        <!-- Statistics Dashboard -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-info">
+                    <h3 id="totalEvents">0</h3>
+                    <p>Total Events</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3 id="activeEvents">0</h3>
+                    <p>Active Events</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                    <h3 id="totalAttendees">0</h3>
+                    <p>Total Attendees</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <h3 id="avgRating">0</h3>
+                    <p>Average Rating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading">
+            <div class="spinner"></div>
+            <p>Loading events...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <span class="error-icon">⚠️</span>
+            <p id="errorText"></p>
+            <button id="retryBtn" class="btn-retry">Retry</button>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-section">
+            <div class="section-header">
+                <h2>All Events</h2>
+                <span id="eventCount" class="count-badge">0 events</span>
+            </div>
+            <div id="eventsContainer" class="events-grid">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- No Events Message -->
+        <div id="noEventsMessage" class="no-events" style="display: none;">
+            <div class="no-events-icon">🔍</div>
+            <h3>No events found</h3>
+            <p>Try adjusting your filters or check back later</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

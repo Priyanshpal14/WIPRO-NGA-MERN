@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Customer Module - Test Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .info-box h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .info-box p {
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .console-box {
+            background: #1a202c;
+            color: #48bb78;
+            padding: 2rem;
+            border-radius: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-height: 600px;
+            overflow-y: auto;
+            margin-bottom: 2rem;
+        }
+
+        .console-box h3 {
+            color: #f6ad55;
+            margin-bottom: 1rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateX(10px);
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions {
+            background: #fef5e7;
+            border: 2px solid #f39c12;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .instructions h3 {
+            color: #f39c12;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ol {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+
+        .instructions code {
+            background: #2d3748;
+            color: #48bb78;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 TypeScript Customer Module</h1>
+        <p class="subtitle">Advanced TypeScript Implementation with Interfaces, Classes, and Decorators</p>
+
+        <div class="info-box">
+            <h2>📚 Module Overview</h2>
+            <p><strong>Purpose:</strong> Comprehensive customer registration and management system</p>
+            <p><strong>Technologies:</strong> TypeScript, ES6+, Object-Oriented Programming</p>
+            <p><strong>Features:</strong> Type Safety, Decorators, Inheritance, Iterators</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">📋</div>
+                <h4>Interfaces</h4>
+                <p>Defines contracts for Customer, Address, Contact Info, Event Registration, and Membership structures</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🏗️</div>
+                <h4>Classes</h4>
+                <p>Person (abstract), Customer, CorporateCustomer with proper inheritance and encapsulation</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🎨</div>
+                <h4>Decorators</h4>
+                <p>Custom decorators for logging, email validation, timing, and timestamps</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🔢</div>
+                <h4>Enums</h4>
+                <p>CustomerType, MembershipTier, and EventCategory enumerations</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">📦</div>
+                <h4>Tuples</h4>
+                <p>Type-safe tuples for registration records and coordinates</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🔄</div>
+                <h4>Iterators</h4>
+                <p>Custom iterator implementation for customer collections</p>
+            </div>
+        </div>
+
+        <div class="console-box">
+            <h3>📊 Console Output (Open Browser Console - F12)</h3>
+            <p>👉 Press F12 or Right-click → Inspect → Console tab to see the full output</p>
+            <br>
+            <p>The TypeScript module demonstrates:</p>
+            <p>✅ Customer creation and management</p>
+            <p>✅ Membership assignment with benefits</p>
+            <p>✅ Event registration system</p>
+            <p>✅ Email validation with decorators</p>
+            <p>✅ Performance measurement</p>
+            <p>✅ Iterator pattern implementation</p>
+            <p>✅ Comprehensive reporting</p>
+        </div>
+
+        <div>
+            <h3 style="color: #667eea; margin-bottom: 1rem;">🏆 TypeScript Features Implemented:</h3>
+            <span class="badge">Interfaces</span>
+            <span class="badge">Abstract Classes</span>
+            <span class="badge">Inheritance</span>
+            <span class="badge">Decorators</span>
+            <span class="badge">Enums</span>
+            <span class="badge">Tuples</span>
+            <span class="badge">Type Aliases</span>
+            <span class="badge">Iterators</span>
+            <span class="badge">Generics</span>
+            <span class="badge">Access Modifiers</span>
+        </div>
+
+        <div class="instructions">
+            <h3>⚙️ Compilation Instructions</h3>
+            <ol>
+                <li>Install TypeScript: <code>npm install -g typescript</code></li>
+                <li>Navigate to the userstory3 folder in terminal</li>
+                <li>Compile: <code>tsc</code> or <code>tsc CustomerModule.ts</code></li>
+                <li>This generates <code>CustomerModule.js</code></li>
+                <li>Open <code>index.html</code> in browser</li>
+                <li>Open Console (F12) to see the output</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Load the compiled JavaScript -->
+    <script src="CustomerModule.js"></script>
+</body>
+</html>
