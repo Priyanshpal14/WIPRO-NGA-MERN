@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 79000,
+      "category": "Electronics",
+      "description": "High performance laptop"
+    },
+    {
+      "id": 2,
+      "name": "Phone",
+      "price": 69000,
+      "category": "Electronics",
+      "description": "Latest smartphone"
+    },
+    {
+      "id": 3,
+      "name": "Headphones",
+      "price": 1999,
+      "category": "Accessories",
+      "description": "Noise cancelling headphones"
+    },
+    {
+      "id": 4,
+      "name": "Mouse",
+      "price": 499,
+      "category": "Accessories",
+      "description": "Wireless mouse"
+    },
+    {
+      "id": 5,
+      "name": "Keyboard",
+      "price": 899,
+      "category": "Accessories",
+      "description": "Mechanical keyboard"
+    },
+    {
+      "id": 6,
+      "name": "Monitor",
+      "price": 2999,
+      "category": "Electronics",
+      "description": "4K monitor"
+    },
+    {
+      "id": 7,
+      "name": "Type-C Cable",
+      "price": 199,
+      "category": "Accessories",
+      "description": "Type C to C cable for charging and data transfer."
+    }
+  ]
+}
